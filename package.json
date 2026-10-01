@@ -1,0 +1,24 @@
+{
+  "name": "portfolio",
+  "version": "1.0.0",
+  "description": "still building it 🫩",
+  "homepage": "https://github.com/salmuqri/portfolio#readme",
+  "bugs": {
+    "url": "https://github.com/salmuqri/portfolio/issues"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/salmuqri/portfolio.git"
+  },
+  "license": "ISC",
+  "author": "sarah",
+  "type": "commonjs",
+  "main": "app.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "dependencies": {
+    "@tailwindcss/cli": "^4.3.3",
+    "tailwindcss": "^4.3.3"
+  }
+}
