@@ -1,1 +1,102 @@
 @import "tailwindcss";
+@property --bga-14-p1x {
+  syntax: '<percentage>';
+  inherits: false;
+  initial-value: 16%;
+}
+@property --bga-14-p1y {
+  syntax: '<percentage>';
+  inherits: false;
+  initial-value: 22%;
+}
+@property --bga-14-p2x {
+  syntax: '<percentage>';
+  inherits: false;
+  initial-value: 82%;
+}
+@property --bga-14-p2y {
+  syntax: '<percentage>';
+  inherits: false;
+  initial-value: 18%;
+}
+@property --bga-14-p3x {
+  syntax: '<percentage>';
+  inherits: false;
+  initial-value: 50%;
+}
+@property --bga-14-p3y {
+  syntax: '<percentage>';
+  inherits: false;
+  initial-value: 78%;
+}
+@property --bga-14-p4x {
+  syntax: '<percentage>';
+  inherits: false;
+  initial-value: 88%;
+}
+@property --bga-14-p4y {
+  syntax: '<percentage>';
+  inherits: false;
+  initial-value: 72%;
+}
+@property --bga-14-p5x {
+  syntax: '<percentage>';
+  inherits: false;
+  initial-value: 30%;
+}
+@property --bga-14-p5y {
+  syntax: '<percentage>';
+  inherits: false;
+  initial-value: 52%;
+}
+
+.bga-14 {
+  width: 100%;
+  min-height: 100vh;
+  min-height: 100svh;
+  display: block;
+  position: relative;
+  overflow: hidden;
+  isolation: isolate;
+  --bga-14-c1: oklch(0.72 0.19 12);
+  --bga-14-c2: oklch(0.7 0.17 320);
+  --bga-14-c3: oklch(0.74 0.15 250);
+  --bga-14-c4: oklch(0.8 0.14 190);
+  --bga-14-c5: oklch(0.86 0.16 82);
+  --bga-14-base: oklch(0.32 0.07 290);
+  background: var(--bga-14-base);
+  color: oklch(0.99 0.006 300);
+  font-family: ui-sans-serif,system-ui,-apple-system,'Segoe UI',sans-serif;
+  -webkit-font-smoothing: antialiased;
+}
+.bga-14__mesh {
+  position: absolute;
+  inset: 0;
+  scale: 1.18;
+  filter: blur(52px) saturate(1.28);
+  background: radial-gradient(42% 52% at var(--bga-14-p1x) var(--bga-14-p1y),var(--bga-14-c1),transparent 62%), radial-gradient(46% 44% at var(--bga-14-p2x) var(--bga-14-p2y),var(--bga-14-c2),transparent 60%), radial-gradient(52% 50% at var(--bga-14-p3x) var(--bga-14-p3y),var(--bga-14-c3),transparent 62%), radial-gradient(38% 42% at var(--bga-14-p4x) var(--bga-14-p4y),var(--bga-14-c4),transparent 58%), radial-gradient(44% 46% at var(--bga-14-p5x) var(--bga-14-p5y),var(--bga-14-c5),transparent 60%), var(--bga-14-base);
+  animation: bga-14-mesh 26s cubic-bezier(.45,0,.55,1) infinite alternate;
+}
+@keyframes bga-14-mesh {
+  to {
+    --bga-14-p1x: 34%;
+    --bga-14-p1y: 56%;
+    --bga-14-p2x: 62%;
+    --bga-14-p2y: 34%;
+    --bga-14-p3x: 28%;
+    --bga-14-p3y: 62%;
+    --bga-14-p4x: 66%;
+    --bga-14-p4y: 86%;
+    --bga-14-p5x: 56%;
+    --bga-14-p5y: 24%;
+  }
+}
+.bga-14__grain {
+  position: absolute;
+  inset: 0;
+  pointer-events: none;
+  opacity: .22;
+  mix-blend-mode: overlay;
+  background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='180' height='180'%3E%3Cfilter id='g'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.9' numOctaves='3' stitchTiles='stitch'/%3E%3CfeColorMatrix type='saturate' values='0'/%3E%3C/filter%3E%3Crect width='180' height='180' filter='url(%23g)'/%3E%3C/svg%3E");
+  background-size: 180px 180px;
+}
