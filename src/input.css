@@ -1,4 +1,5 @@
 @import "tailwindcss";
+
 @property --bga-14-p1x {
   syntax: '<percentage>';
   inherits: false;

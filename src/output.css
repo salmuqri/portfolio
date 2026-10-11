@@ -8,7 +8,15 @@
       "Segoe UI Symbol", "Noto Color Emoji";
     --font-mono: ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, "Liberation Mono",
       "Courier New", monospace;
+    --color-sky-400: oklch(74.6% 0.16 232.661);
+    --color-sky-950: oklch(29.3% 0.066 243.157);
+    --color-blue-600: oklch(54.6% 0.245 262.881);
+    --color-blue-950: oklch(28.2% 0.091 267.935);
+    --color-white: #fff;
     --spacing: 0.25rem;
+    --text-2xl: 1.5rem;
+    --text-2xl--line-height: calc(2 / 1.5);
+    --font-weight-bold: 700;
     --default-font-family: var(--font-sans);
     --default-mono-font-family: var(--font-mono);
   }
@@ -168,14 +176,23 @@
   .table {
     display: table;
   }
+  .h-12 {
+    height: calc(var(--spacing) * 12);
+  }
+  .w-1 {
+    width: var(--spacing);
+  }
+  .w-1\/5 {
+    width: calc(1 / 5 * 100%);
+  }
   .w-2 {
     width: calc(var(--spacing) * 2);
   }
-  .w-72 {
-    width: calc(var(--spacing) * 72);
+  .w-2\/5 {
+    width: calc(2 / 5 * 100%);
   }
-  .flex-2 {
-    flex: 2;
+  .w-24 {
+    width: calc(var(--spacing) * 24);
   }
   .border-collapse {
     border-collapse: collapse;
@@ -183,15 +200,35 @@
   .resize {
     resize: both;
   }
-  .flex-row {
-    flex-direction: row;
-  }
   .flex-row-reverse {
     flex-direction: row-reverse;
+  }
+  .justify-around {
+    justify-content: space-around;
   }
   .border {
     border-style: var(--tw-border-style);
     border-width: 1px;
+  }
+  .font-mono {
+    font-family: var(--font-mono);
+  }
+  .text-2xl {
+    font-size: var(--text-2xl);
+    line-height: var(--tw-leading, var(--text-2xl--line-height));
+  }
+  .font-bold {
+    --tw-font-weight: var(--font-weight-bold);
+    font-weight: var(--font-weight-bold);
+  }
+  .text-blue-600 {
+    color: var(--color-blue-600);
+  }
+  .text-blue-950 {
+    color: var(--color-blue-950);
+  }
+  .text-white {
+    color: var(--color-white);
   }
   .underline {
     text-decoration-line: underline;
@@ -202,6 +239,14 @@
   }
   .filter {
     filter: var(--tw-blur,) var(--tw-brightness,) var(--tw-contrast,) var(--tw-grayscale,) var(--tw-hue-rotate,) var(--tw-invert,) var(--tw-saturate,) var(--tw-sepia,) var(--tw-drop-shadow,);
+  }
+  @media (prefers-color-scheme: dark) {
+    .dark\:text-sky-400 {
+      color: var(--color-sky-400);
+    }
+    .dark\:text-sky-950 {
+      color: var(--color-sky-950);
+    }
   }
 }
 @property --bga-14-p1x {
@@ -309,6 +354,10 @@
   inherits: false;
   initial-value: solid;
 }
+@property --tw-font-weight {
+  syntax: "*";
+  inherits: false;
+}
 @property --tw-outline-style {
   syntax: "*";
   inherits: false;
@@ -371,6 +420,7 @@
   @supports ((-webkit-hyphens: none) and (not (margin-trim: inline))) or ((-moz-orient: inline) and (not (color:rgb(from red r g b)))) {
     *, ::before, ::after, ::backdrop {
       --tw-border-style: solid;
+      --tw-font-weight: initial;
       --tw-outline-style: solid;
       --tw-blur: initial;
       --tw-brightness: initial;
