@@ -5,3 +5,6 @@ education
 projects
 blog?
 contact
+leetcode
+hackerrank?
+reading/watching
